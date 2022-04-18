@@ -27,7 +27,7 @@ jobs:
         with:
           valueFile: 'jekyll-templates/deployment.yaml'
           propertyPath: 'spec.template.spec.containers.image'
-          value: smoonemans/jekyll-blog:${{ github.event.inputs.tag}}
+          value: 'smoonemans/jekyll-blog:${{ github.event.inputs.tag}}'
           commitChange: false
           updateFile: true
       - name: Git Auto Commit
