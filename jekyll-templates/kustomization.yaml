@@ -1,7 +1,0 @@
-commonLabels:
-  app: my-jekyll-blog
-resources:
-- deployment.yaml
-- service.yaml
-- template.yaml
-- ns.yaml
