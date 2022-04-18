@@ -11,11 +11,11 @@ spec:
   template:
     metadata:
       labels:
-        app: jekyll-blog  
+        app: jekyll-blog
     spec:
       containers:
-      - name: website
-        image: smoonemans/jekyll-blog:v0.0.1
-        imagePullPolicy: Always
-        ports:
-          - containerPort: 80
+        - name: website
+          image: smoonemans/jekyll-blog:v0.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
