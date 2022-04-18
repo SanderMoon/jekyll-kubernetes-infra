@@ -26,8 +26,8 @@ jobs:
         uses: fjogeleit/yaml-update-action@main
         with:
           valueFile: 'jekyll-templates/deployment.yaml'
-          propertyPath: 'spec.template.spec.containers.image'
-          value: 'smoonemans/jekyll-blog:${{ github.event.inputs.tag}}'
+          propertyPath: 'spec.template.spec.containers[0].image'
+          value: smoonemans/jekyll-blog:${{ github.event.inputs.tag}}
           commitChange: false
           updateFile: true
       - name: Git Auto Commit
