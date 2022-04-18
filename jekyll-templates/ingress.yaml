@@ -1,0 +1,29 @@
+---
+#Ingress for the blog
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: jekyll-ingress
+  namespace: jekyll
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    kubernetes.io/ingress.class: public    
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  tls:
+  - hosts:
+    - manofthemoon.nl
+    secretName: example-quickstart-tls # Name of the secret
+  rules:
+  - host: manofthemoon.nl
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: jekyll-service
+            port:
+              number: 80

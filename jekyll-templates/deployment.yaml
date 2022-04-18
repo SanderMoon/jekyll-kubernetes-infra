@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jekyll-website
+  namespace: jekyll
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: jekyll-blog
+  template:
+    metadata:
+      labels:
+        app: jekyll-blog  
+    spec:
+      containers:
+      - name: website
+        image: smoonemans/jekyll-blog:v0.0.1
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 80

@@ -1,0 +1,17 @@
+---
+#Loadbalancer for the deployment
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jekyll-service
+  namespace: jekyll
+spec:
+  selector:
+    app: jekyll-blog
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  type: LoadBalancer
+  
