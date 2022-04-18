@@ -25,7 +25,7 @@ jobs:
       - name: Update values.yaml
         uses: fjogeleit/yaml-update-action@main
         with:
-          valueFile: 'jekyll-templates\deployment.yaml'
+          valueFile: 'jekyll-templates/deployment.yaml'
           propertyPath: 'spec.template.spec.containers.image'
           value: smoonemans/jekyll-blog:${{ github.event.inputs.tag}}
           commitChange: false
