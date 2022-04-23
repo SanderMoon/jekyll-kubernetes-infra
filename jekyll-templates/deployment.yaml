@@ -5,6 +5,7 @@ metadata:
   namespace: jekyll
 spec:
   replicas: 3
+  revisionHistoryLimit: 3
   selector:
     matchLabels:
       app: jekyll-blog
