@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: website
-          image: smoonemans/jekyll-blog:v0.0.15
+          image: smoonemans/jekyll-blog:v0.0.16
           imagePullPolicy: Always
           ports:
             - containerPort: 80
